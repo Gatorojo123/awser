@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+
+.contenido-curso h2 {
+  font-size: 1.87em; /* 24px */
+  color: #0056b3; /* Azul más oscuro para mejor contraste */
+  margin-top: 18px;
+  font-weight: bold; /* Resalta el título */
+  border-left: 4px solid #007bff; /* Barra lateral para énfasis */
+  padding-left: 12px; /* Espacio para separar del borde */
+}
+
+
+.contenido-curso h3 {
+  font-size: 1.5em; /* 24px */
+  color: #0056b3; /* Azul más oscuro para mejor contraste */
+  margin-top: 18px;
+  font-weight: bold; /* Resalta el título */
+  border-left: 4px solid #007bff; /* Barra lateral para énfasis */
+  padding-left: 12px; /* Espacio para separar del borde */
+}
+
+
+.contenido-curso p {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.contenido-curso ul {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+}
+
+.contenido-curso ul li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.contenido-curso ul li::before {
+  content: "✔";
+  color: #28a745;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.contenido-curso .notice {
+  background: #fff3cd;
+  color: #856404;
+  padding: 10px;
+  border-left: 5px solid #ffc107;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.contenido-curso a {
+  display: inline-block;
+  background-color: #ff6600; /* Naranja vibrante */
+  color: #ffffff;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-curso a:hover {
+  background-color: #e65c00; /* Naranja más oscuro */
+  transform: scale(1.05);
+  box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.contenido-curso a:active {
+  background-color: #cc5200; /* Naranja aún más oscuro */
+  transform: scale(0.98);
+}
