@@ -13,6 +13,11 @@ type PageProps = {
 export default function CursoPage({ params }: PageProps) {
   const curso = cursos.find((c) => c.slug === params.slug);
 
+  const cursosRecientes = useMemo(() =>
+    cursos.filter((c) => c.slug !== curso?.slug).slice(0, 3),
+    [curso?.slug]
+  );
+
   if (!curso) {
     return (
       <>
@@ -25,11 +30,6 @@ export default function CursoPage({ params }: PageProps) {
       </>
     );
   }
-
-  const cursosRecientes = useMemo(() =>
-    cursos.filter((c) => c.slug !== curso.slug).slice(0, 3),
-    [curso.slug]
-  );
 
   return (
     <>

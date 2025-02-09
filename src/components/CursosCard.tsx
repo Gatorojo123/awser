@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 type Curso = {
   id: string;
@@ -25,7 +26,13 @@ export default function CursosCard({
     <Link href={`/courses/${slug}`} passHref>
       <div className="group block overflow-hidden rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 bg-white dark:bg-gray-900">
         <div className="relative w-full h-52 overflow-hidden rounded-t-2xl">
-          <img src={imagen} alt={titulo} className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110" />
+          <Image
+            src={imagen}
+            alt={titulo}
+            layout="fill"
+            objectFit="cover"
+            className="transition-all duration-300 group-hover:scale-110"
+          />
         </div>
         <div className="p-5">
           <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2 group-hover:text-blue-600 transition-all">{titulo}</h3>

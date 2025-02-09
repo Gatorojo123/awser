@@ -16,34 +16,7 @@ type Curso = {
 export default function Navbar() {
   const [query, setQuery] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [filteredCursos, setFilteredCursos] = useState<Curso[]>([]);
   const router = useRouter();
-
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.toLowerCase();
-    setQuery(value);
-    setFilteredCursos(
-      value.trim()
-        ? cursos.filter((curso) => curso.titulo.toLowerCase().includes(value))
-        : []
-    );
-  };
-
-  const handleSelectCurso = (slug: string) => {
-    setQuery("");
-    setFilteredCursos([]);
-    setMenuOpen(false);
-    router.push(`/courses/${slug}`);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (query.trim()) {
-      setFilteredCursos([]);
-      setMenuOpen(false);
-      router.push(`/search?query=${query}`);
-    }
-  };
 
   return (
     <nav className="p-4 bg-gray-900/80 backdrop-blur-md text-white fixed w-full top-0 z-50 border-b border-gray-700/40 shadow-lg shadow-blue-900/20 flex items-center justify-between">
