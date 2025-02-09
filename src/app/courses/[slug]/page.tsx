@@ -7,11 +7,14 @@ import cursos from '@/data/cursos';
 import Footer from '@/components/Footer';
 
 type PageProps = {
-  params: { slug: string };
+  params: {
+    slug: string;
+  };
 };
 
-export default function CursoPage({ params }: PageProps) {
-  const curso = cursos.find((c) => c.slug === params.slug);
+const Page = ({ params }: PageProps) => {
+  const { slug } = params;
+  const curso = cursos.find((c) => c.slug === slug);
 
   const cursosRecientes = useMemo(() =>
     cursos.filter((c) => c.slug !== curso?.slug).slice(0, 3),
@@ -111,3 +114,5 @@ export async function generateStaticParams() {
     slug: curso.slug,
   }));
 }
+
+export default Page;
