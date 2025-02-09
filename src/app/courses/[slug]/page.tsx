@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useMemo } from 'react';
 import Navbar from '@/components/Navbar';
 import cursos from '@/data/cursos';
 import Footer from '@/components/Footer';
@@ -16,10 +15,7 @@ const Page = async ({ params }: PageProps) => {
   const { slug } = params;
   const curso = cursos.find((c) => c.slug === slug);
 
-  const cursosRecientes = useMemo(() =>
-    cursos.filter((c) => c.slug !== curso?.slug).slice(0, 3),
-    [curso?.slug]
-  );
+  const cursosRecientes = cursos.filter((c) => c.slug !== curso?.slug).slice(0, 3);
 
   if (!curso) {
     return (
