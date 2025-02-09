@@ -12,7 +12,7 @@ type PageProps = {
   };
 };
 
-const Page = ({ params }: PageProps) => {
+const Page = async ({ params }: PageProps) => {
   const { slug } = params;
   const curso = cursos.find((c) => c.slug === slug);
 
